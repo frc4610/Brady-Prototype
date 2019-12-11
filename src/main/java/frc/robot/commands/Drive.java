@@ -8,9 +8,15 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
+import frc.robot.OI;
+import frc.robot.Robot;
+
 
 public class Drive extends Command {
-  public Drive() {
+  public Drive() 
+  {
+    
+requires(Robot.drivebase);
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
   }
@@ -22,7 +28,9 @@ public class Drive extends Command {
 
   // Called repeatedly when this Command is scheduled to run
   @Override
-  protected void execute() {
+  protected void execute() 
+  {
+    Robot.drivebase.drive(-OI.CON.getRawAxis(1),-OI.CON.getRawAxis(3));
   }
 
   // Make this return true when this Command no longer needs to run execute()

@@ -31,6 +31,9 @@ public class DriveBase extends Subsystem {
  public void drive (double leftStick, double rightStick)
  {
    driveFL.set(ControlMode.PercentOutput , leftStick);
+   driveBL.set(ControlMode.PercentOutput , leftStick);
+   driveFR.set(ControlMode.PercentOutput , rightStick);
+   driveBR.set(ControlMode.PercentOutput , rightStick);
  }
 
   // Put methods for controlling this subsystem
